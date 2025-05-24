@@ -15,80 +15,152 @@ const AboutSection: React.FC = () => {
     {
       company: "Cognizant Technology Solutions",
       role: "Senior Data Analyst (SPED)",
-      description: "Analyzed healthcare provider claims data, built SQL-driven databases, and delivered actionable insights."
+      description: "Analyzed healthcare provider claims data, built SQL-driven databases, and delivered actionable insights.",
+      period: "2022 - 2024",
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
       company: "Randstad India Private Limited",
       role: "Customer Data Analyst",
-      description: "Ensured data integrity across customer systems using SQL and advanced analytics."
+      description: "Ensured data integrity across customer systems using SQL and advanced analytics.",
+      period: "2021 - 2022",
+      gradient: "from-purple-500 to-pink-500"
     },
     {
       company: "Think and Learn Pvt. Ltd.",
       role: "Customer Data Quality Analyst",
-      description: "Improved data accuracy through comprehensive profiling and cleansing processes."
+      description: "Improved data accuracy through comprehensive profiling and cleansing processes.",
+      period: "2020 - 2021",
+      gradient: "from-green-500 to-teal-500"
     }
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-roboto font-bold text-4xl md:text-5xl text-white mb-6">
-            About <span className="text-blue-400">Me</span>
+    <section id="about" className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-48 h-48 bg-cyan-400 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-xl mb-8">
+            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse mr-3"></div>
+            <span className="text-gray-300 font-medium">About Me</span>
+          </div>
+          <h2 className="font-roboto font-bold text-5xl md:text-6xl text-white mb-6">
+            Crafting Solutions Through
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent"> Data</span>
           </h2>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Transforming complex data challenges into strategic opportunities with precision and innovation
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
+          {/* Profile Section */}
           <div className="text-center lg:text-left">
-            <div className="relative inline-block mb-8">
+            <div className="relative inline-block mb-8 group">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
               <img
                 src="https://i.postimg.cc/wjvYPVZC/Profile-Pic.jpg"
                 alt="Profile picture of Sabyasachi Chatterjee"
-                className="w-80 h-80 rounded-full object-cover shadow-2xl border-4 border-blue-500 animate-float"
+                className="relative w-80 h-80 rounded-full object-cover shadow-2xl border-4 border-white/20 backdrop-blur-sm group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/20 to-transparent"></div>
+              <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-r from-green-400 to-green-500 rounded-full flex items-center justify-center shadow-xl">
+                <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+              </div>
             </div>
           </div>
 
+          {/* Content Section */}
           <div className="space-y-8">
-            <div className="bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300">
-              <h3 className="font-roboto font-bold text-2xl text-blue-400 mb-4">Professional Summary</h3>
+            <div className="bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-2xl hover:bg-white/10 transition-all duration-500 group">
+              <div className="flex items-start space-x-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg">
+                  <span className="text-2xl">🎯</span>
+                </div>
+                <div>
+                  <h3 className="font-roboto font-bold text-2xl text-white mb-2">Professional Summary</h3>
+                  <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"></div>
+                </div>
+              </div>
               <p className="font-open-sans text-gray-300 leading-relaxed text-lg">
-                I'm a Data Management and Analysis Specialist with 4 years of experience in healthcare, 
+                I'm a Data Management and Analysis Specialist with <span className="text-blue-400 font-semibold">4+ years of experience</span> in healthcare, 
                 banking, investment banking, retail, and customer data sectors. I excel in ensuring data 
                 quality, governance, and compliance while delivering actionable insights through advanced 
                 analytics and visualization.
               </p>
             </div>
 
-            <div className="bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300">
-              <h3 className="font-roboto font-bold text-2xl text-blue-400 mb-6">Experience</h3>
-              <div className="space-y-6">
-                {experiences.map((exp, index) => (
-                  <div key={index} className="border-l-4 border-blue-500 pl-6">
-                    <h4 className="font-semibold text-white text-lg">{exp.company}</h4>
-                    <h5 className="font-medium text-blue-300 mb-2">{exp.role}</h5>
-                    <p className="text-gray-400 text-sm">{exp.description}</p>
-                  </div>
-                ))}
+            {/* Key Metrics */}
+            <div className="grid grid-cols-3 gap-6">
+              <div className="text-center bg-white/5 backdrop-blur-xl p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="text-3xl font-bold text-blue-400 mb-2">4+</div>
+                <div className="text-sm text-gray-400">Years Experience</div>
+              </div>
+              <div className="text-center bg-white/5 backdrop-blur-xl p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="text-3xl font-bold text-cyan-400 mb-2">5+</div>
+                <div className="text-sm text-gray-400">Industries</div>
+              </div>
+              <div className="text-center bg-white/5 backdrop-blur-xl p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="text-3xl font-bold text-green-400 mb-2">100+</div>
+                <div className="text-sm text-gray-400">Projects</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-16">
-          <h3 className="font-roboto font-bold text-3xl text-center text-white mb-12">
-            Technical <span className="text-blue-400">Skills</span>
+        {/* Experience Section */}
+        <div className="mb-20">
+          <h3 className="font-roboto font-bold text-4xl text-center text-white mb-16">
+            Professional <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Journey</span>
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div className="space-y-8">
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className="group relative bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-r ${exp.gradient} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`}></div>
+                <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <div className={`w-3 h-3 bg-gradient-to-r ${exp.gradient} rounded-full`}></div>
+                      <h4 className="font-roboto font-bold text-xl text-white">{exp.company}</h4>
+                      <span className="px-3 py-1 bg-white/10 text-blue-300 text-sm rounded-full">{exp.period}</span>
+                    </div>
+                    <h5 className="font-semibold text-blue-300 text-lg mb-3">{exp.role}</h5>
+                    <p className="text-gray-400 leading-relaxed">{exp.description}</p>
+                  </div>
+                  <div className="mt-4 md:mt-0 md:ml-8">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${exp.gradient} rounded-2xl flex items-center justify-center shadow-lg`}>
+                      <span className="text-2xl">💼</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Skills Section */}
+        <div>
+          <h3 className="font-roboto font-bold text-4xl text-center text-white mb-16">
+            Technical <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Expertise</span>
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-lg text-center border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:scale-105"
+                className="group bg-white/5 backdrop-blur-xl p-4 rounded-2xl text-center border border-white/10 hover:bg-white/10 hover:border-blue-400/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20"
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <span className="font-open-sans text-sm text-gray-300 hover:text-white transition-colors">
+                <span className="font-open-sans text-sm text-gray-300 group-hover:text-white transition-colors duration-300">
                   {skill}
                 </span>
+                <div className="w-full h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2"></div>
               </div>
             ))}
           </div>
