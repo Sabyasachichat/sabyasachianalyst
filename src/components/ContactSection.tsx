@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone, Linkedin, Github, MapPin, Clock } from 'lucide-react';
 
@@ -14,8 +13,8 @@ const ContactSection: React.FC = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "9064504681 / 9547462874",
-      href: "tel:9064504681",
+      value: "+91- 9064504681 / 9547462874",
+      href: "tel:+919064504681",
       gradient: "from-green-500 to-teal-500"
     },
     {

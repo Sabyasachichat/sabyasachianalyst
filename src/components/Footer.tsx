@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone, Linkedin, Github } from 'lucide-react';
 
@@ -21,7 +20,7 @@ const Footer: React.FC = () => {
     },
     {
       icon: Phone,
-      href: "tel:9064504681",
+      href: "tel:+919064504681",
       label: "Phone"
     }
   ];
