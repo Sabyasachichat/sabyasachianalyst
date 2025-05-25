@@ -13,7 +13,7 @@ const ContactSection: React.FC = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+91- 9064504681 / 9547462874",
+      value: "+91- 9064504681",
       href: "tel:+919064504681",
       gradient: "from-green-500 to-teal-500"
     },
